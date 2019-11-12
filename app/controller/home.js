@@ -2,10 +2,12 @@
 
 const Controller = require('egg').Controller;
 
+/**
+ * @param {Egg.Application} app - egg application
+ */
 class HomeController extends Controller {
   async index() {
-    const { ctx } = this;
-    ctx.body = 'hi, egg';
+    this.ctx.body = 'blog api';
   }
 }
 

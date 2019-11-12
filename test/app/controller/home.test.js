@@ -11,10 +11,10 @@ describe('test/app/controller/home.test.js', () => {
     // yield ctx.service.xx();
   });
 
-  it('should GET /', () => {
-    return app.httpRequest()
+  it('should GET /', async () => {
+    await app.httpRequest()
       .get('/')
-      .expect('hi, egg')
+      .expect('blog api')
       .expect(200);
   });
 });

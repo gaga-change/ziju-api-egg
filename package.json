@@ -8,12 +8,15 @@
   },
   "dependencies": {
     "egg": "^2.15.1",
-    "egg-scripts": "^2.11.0"
+    "egg-mongoose": "^3.2.0",
+    "egg-only": "^0.0.1",
+    "egg-scripts": "^2.11.0",
+    "qiniu": "^7.2.2"
   },
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
-    "egg-bin": "^4.11.0",
+    "egg-bin": "^4.14.0",
     "egg-ci": "^1.11.0",
     "egg-mock": "^3.21.0",
     "eslint": "^5.13.0",
@@ -23,9 +26,9 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-ziju-api-egg",
+    "start": "egg-scripts start --port=9800 --title=egg-server-ziju-api-egg",
     "stop": "egg-scripts stop --title=egg-server-ziju-api-egg",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev --port=9800",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
@@ -39,8 +42,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/gaga-change/ziju-api-egg.git"
   },
+  "bugs": {
+    "url": "https://github.com/gaga-change/ziju-api-egg/issues"
+  },
+  "homepage": "https://github.com/gaga-change/ziju-api-egg#readme",
   "author": "严俊东",
   "license": "MIT"
 }

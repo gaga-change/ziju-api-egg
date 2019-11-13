@@ -32,6 +32,13 @@ module.exports = app => {
   router.put('/api/categories/:id', admin, controller.category.update);
   router.delete('/api/categories/:id', admin, controller.category.destroy);
 
+  // ## 源代码
+  router.get('/api/sources', controller.source.index);
+  router.get('/api/sources/:id', controller.source.show);
+  router.post('/api/sources', admin, controller.source.create);
+  router.put('/api/sources/:id', admin, controller.source.update);
+  router.delete('/api/sources/:id', admin, controller.source.destroy);
+
   // ## 采集
   router.get('/api/posts', controller.post.index);
   router.get('/api/posts/:id', controller.post.show);

@@ -13,7 +13,7 @@ module.exports = app => {
     sourceCss: { type: String, default: '' }, // 样式源文件
     sourceType: { type: String, default: 'css' }, // 源文件类型（less、scss、css）
     origin: { type: String }, // 出处url
-    show: { type: Boolean, default: true }, // 是否显示（发布/私密）
+    show: { type: Boolean, default: false }, // 是否显示（发布/私密）
     img: { type: Schema.Types.ObjectId, ref: 'Oss' }, // logo
     creater: { type: Schema.Types.ObjectId, ref: 'User' }, // 创建人
   }, {

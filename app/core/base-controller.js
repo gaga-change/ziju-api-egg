@@ -4,6 +4,8 @@ const Controller = require('egg').Controller;
 
 /**
  * creater<Boolean> 是否绑定创建人,默认 true
+ * populates 列表嵌入文档解析
+ * showPopulates 详情嵌入文档解析
  */
 class BaseController extends Controller {
 
@@ -71,10 +73,12 @@ class BaseController extends Controller {
   }
 
   async show() {
+    const { showPopulates = [] } = this._options;
     const { ctx, config } = this;
     const { id } = ctx.params;
     const { select } = ctx.query;
     const mongoQuery = this.Model.findById(id);
+    showPopulates.forEach(v => mongoQuery.populate(v));
     if (select) {
       mongoQuery.select(select);
     }

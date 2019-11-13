@@ -11,10 +11,12 @@ class PostController extends BaseController {
       modelName: 'Post',
       populates: [
         { path: 'category', select: '_id name' },
-        { path: 'source' },
         { path: 'turnBy' },
         { path: 'creater' },
         { path: 'logos' }],
+      showPopulates: [
+        { path: 'source' },
+      ],
     }, ...args);
   }
 

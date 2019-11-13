@@ -32,7 +32,7 @@ module.exports = app => {
   router.put('/api/categories/:id', admin, controller.category.update);
   router.delete('/api/categories/:id', admin, controller.category.destroy);
 
-  // ## 文章
+  // ## 采集
   router.get('/api/posts', controller.post.index);
   router.get('/api/posts/:id', controller.post.show);
   router.post('/api/posts', admin, controller.post.create);

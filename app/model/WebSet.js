@@ -13,6 +13,7 @@ module.exports = app => {
     description: { type: String, default: '', trim: true }, // 描述
     keywords: { type: String, default: '', trim: true }, // 关键词
     appendJsFileUrl: { type: String, default: '', trim: true }, // 额外的js文件url地址
+    creater: { type: Schema.Types.ObjectId, ref: 'User' }, // 创建人
   }, {
     timestamps: true,
   });

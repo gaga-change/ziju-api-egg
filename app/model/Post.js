@@ -8,19 +8,19 @@ module.exports = app => {
   const Schema = mongoose.Schema;
 
   const PostSchema = new Schema({
-    content: { type: String, default: '', trim: true }, // 主要内容
     title: { type: String, default: '', trim: true, maxlength: 1000, unique: true }, // 标题
-    tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }], // 标签
-    category: { type: Schema.Types.ObjectId, ref: 'Category' }, // 目录
-    id: { type: Number, default: 0 }, // 文档ID值
-    releaseDate: { type: Date, default: Date.now }, // 发布时间（展示）
-    show: { type: Boolean, default: true }, // 是否显示（发布/草稿）
-    histories: [{ type: Schema.Types.ObjectId, ref: 'Post' }], // 历史版本
     intro: { type: String, default: '', trim: true, maxlength: 1000 }, // 描述
-    markdown: { type: String, default: '' }, // 源文件内容
-    logos: [{ type: Schema.Types.ObjectId, ref: 'Oss' }], // logo
-    resources: [{ type: Schema.Types.ObjectId, ref: 'Oss' }], // 相关资源（图片、文件）
+    tags: [{ type: String }], // 标签
+    love: [{ type: Schema.type.ObjectId, ref: 'User' }], // 爱心
+    loveNum: { type: Number, default: 0 },
+    turn: [{ type: Schema.type.ObjectId, ref: 'User' }], // 转采
+    turnNum: [{ type: Number, default: 0 }],
+    turnBy: { type: Schema.type.ObjectId, ref: 'User' }, // 采自人
+    source: { type: Schema.type.ObjectId, ref: 'Source' }, // 源代码
+    category: { type: Schema.Types.ObjectId, ref: 'Category' }, // 个人目录
     readTime: { type: Number, default: 0 }, // 点击量
+    imgUrl: { type: String }, // 图标，从源代码的img拷贝
+    creater: { type: Schema.Types.ObjectId, ref: 'User' }, // 创建人
   }, {
     timestamps: true,
   });

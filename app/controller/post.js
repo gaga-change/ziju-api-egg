@@ -10,11 +10,11 @@ class PostController extends BaseController {
     super({
       modelName: 'Post',
       populates: [
-        { path: 'tags', select: '_id name' },
         { path: 'category', select: '_id name' },
+        { path: 'source' },
+        { path: 'turnBy' },
+        { path: 'creater' },
         { path: 'logos' }],
-      defaultIndexSort: { releaseDate: -1 },
-      defaultIndexSelect: '-markdown -content -history',
     }, ...args);
   }
 

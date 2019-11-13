@@ -14,6 +14,7 @@ module.exports = app => {
     path: { type: String, trim: true }, // 短路
     hash: { type: String, trim: true }, // hash
     remark: { type: String, default: '', trim: true, maxlength: 1000 }, // 备注
+    creater: { type: Schema.Types.ObjectId, ref: 'User' }, // 创建人
   }, {
     timestamps: true,
   });

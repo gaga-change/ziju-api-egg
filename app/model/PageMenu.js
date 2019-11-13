@@ -16,6 +16,7 @@ module.exports = app => {
     show: { type: Boolean, default: true }, // 是否显示
     order: { type: Number, default: 0, trim: true }, // 优先级
     remark: { type: String, default: '', trim: true }, // 备注
+    creater: { type: Schema.Types.ObjectId, ref: 'User' }, // 创建人
   }, {
     timestamps: true,
   });

@@ -2,6 +2,9 @@
 
 const Controller = require('egg').Controller;
 
+/**
+ * creater<Boolean> 是否绑定创建人,默认 true
+ */
 class BaseController extends Controller {
 
   constructor(options, ...args) {
@@ -82,9 +85,13 @@ class BaseController extends Controller {
 
   async create() {
     const { ctx, config } = this;
+    const { creater = true } = this._options;
     let item = ctx.request.body;
 
     item = new this.Model(item);
+    if (creater) {
+      item.creater = ctx.session.user;
+    }
     this.success(await item.save(), config.statusCode.CREATE);
   }
 

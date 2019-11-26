@@ -13,7 +13,7 @@ class PostController extends BaseController {
         { path: 'category', select: '_id name' },
         { path: 'turnBy' },
         { path: 'creater' },
-        { path: 'logos' }],
+        { path: 'img' }],
       showPopulates: [
         { path: 'source' },
       ],

@@ -20,6 +20,8 @@ module.exports = app => {
     category: { type: Schema.Types.ObjectId, ref: 'Category' }, // 个人目录
     readTime: { type: Number, default: 0 }, // 点击量
     imgUrl: { type: String }, // 图标，从源代码的img拷贝
+    show: { type: Boolean },
+    img: { type: Schema.Types.ObjectId, ref: 'Oss' },
     creater: { type: Schema.Types.ObjectId, ref: 'User' }, // 创建人
   }, {
     timestamps: true,
